@@ -1,0 +1,12 @@
+{
+  "name": "lit-slotted-component-bug",
+  "version": "0.0.1",
+  "main": "index.html",
+  "scripts": {
+    "dev": "browser-sync start --config browsersync.config.js",
+    "test": "echo 'No tests!'"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.24.4"
+  }
+}

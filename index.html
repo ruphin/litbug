@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>customelements test</title>
-    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <script src="./node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js" type="text/javascript" shadydom></script>
-        <script src="elements.iife.js" type="text/javascript"></script>
-    </head>
-    <body>
-        <my-element></my-element>
-        <button>cause myelement render</button>
-        <script>
-            document.querySelector('button').addEventListener('click', ()=>{
-                console.log('click');
-                document.querySelector('my-element').bool = true;
-            });
-        </script>
-    </body>
-</html>
+<script src="https://unpkg.com/@webcomponents/webcomponentsjs/bundles/webcomponents-sd-ce.js"></script>
+<script src="elements.js" type="module"></script>
+
+<div style="margin-bottom: 20px">Clicking this button should add 'Hi' to both rows</div>
+<button style="margin-bottom: 20px">Say Hi</button>
+
+<div>Vanilla JavaScript:</div>
+<my-element></my-element>
+<div style="margin-top: 20px">Lit-html:</div>
+<my-bugged-element></my-bugged-element>
+
+<script>
+  document.querySelector('button').addEventListener('click', () => {
+    document.querySelector('my-element').push(1);
+    document.querySelector('my-bugged-element').push(1);
+  });
+</script>
+
+<span id="browser-sync-binding"></span>
